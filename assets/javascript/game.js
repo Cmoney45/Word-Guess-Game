@@ -85,6 +85,7 @@ function resetBoard() {
         currentWord = wordBank[Math.floor(Math.random()*wordBank.length)];
         // } while (currentWord = priorWord)
 
+        //create 
         for (var i = 0; i < currentWord.length; i++) {
             currentWordAnswer[i] = "_";
         }
