@@ -1,33 +1,34 @@
 var wordGuessGame = {
     marvelWordBank: [], 
-    dcWordBank: ["Batman", "Superman", "Wonder Woman", "Flash", "Green Lantern", "Martian Manhunter", "Cyborg", "Hawkgirl", "Starfire", "Green Arrow", "Aquaman", "Shazam", "Doctor Fate"],
-    test: {
-        Batman: ["Batman", "img", "quote", "sound"],
-        Superman: ["Superman", "img", "quote", "sound"],        
-        WonderWoman: ["Wonder Woman", "img", "quote", "sound"],
-        Flash: ["Flash", "img", "quote", "sound"],
-        GreenLantern: ["Green Lantern", "img", "quote", "sound"],
-        MartianManhunter: ["Martian Manhunter", "img", "quote", "sound"],
-        Cyborg: ["Cyborg", "img", "quote", "sound"],
-        Hawkgirl: ["Hawkgirl", "img", "quote", "sound"],
-        Starfire: ["Starfire", "img", "qutoe", "sound"],
-        GreenArrow: ["Green Arrow", "img", "quote", "sound"],
-        Aquaman: ["Aquaman", "img", "quote", "sound"],
-        Shazam: ["Shazam", "img", "quote", "sound"],
-        drfate: ["Doctor Fate", "img", "quote", "sound"],
-    },
+    dcWordBank: [
+        Batman = ["Batman", "assets/images/bman.jpg", "quote", "sound"],
+        Superman = ["Superman", "assets/images/supes.jpg", "quote", "sound"],        
+        WonderWoman = ["Wonder Woman", "assets/images/wonderwoman.jpg", "quote", "sound"],
+        Flash = ["Flash", "assets/images/flash.jpg", "quote", "sound"],
+        GreenLantern = ["Green Lantern", "assets/images/Green_Lantern_Corps.jpg", "quote", "sound"],
+        MartianManhunter = ["Martian Manhunter", "assets/images/martian.jpg", "quote", "sound"],
+        Cyborg = ["Cyborg", "assets/images/cyborg.jpg", "quote", "sound"],
+        Hawkgirl = ["Hawkgirl", "assets/images/hawkgirl.jpg", "quote", "sound"],
+        Starfire = ["Starfire", "assets/images/starfire.jpg", "quote", "sound"],
+        GreenArrow = ["Green Arrow", "assets/images/arrow.jpg", "quote", "sound"],
+        Aquaman = ["Aquaman", "assets/images/aquaman.jpg", "quote", "sound"],
+        Shazam = ["Shazam", "assets/images/shazam.jpg", "quote", "sound"],
+        drfate = ["Doctor Fate", "assets/images/drfate.jpg", "quote", "sound"],
+    ],
     currentWordBank: [],
     wins: 0,
-    guess: 8,
+    guess: 5,
 
     guessCounter: 0,
     changeCounter: 0,
     lettersGuessed: [],
     currentWord: "",
-    currentWordAnswer: [],
+    currentWordAnswer: ["Type any key to get your first hero!"],
     userGuess: "",
-    priorWord: undefined,
     lettersRemaining: 1,
+    currentWordSelector: 0,
+    priorWordSelector: 0,
+
 
     checkGuess: function() {
         //If it's the start of the game, don't run and give a point.
@@ -59,15 +60,20 @@ var wordGuessGame = {
     resetBoard: function() {
         if (this.guessCounter == 0 || this.lettersRemaining === 0) {
             if (this.lettersRemaining === 0){
-                this.priorWord = this.currentWord;
+                this.priorWordSelector = this.currentWordSelector
                 this.wins++;
             }
+
             this.currentWordAnswer.length = 0;
             this.lettersRemaining = 0;
+            this.currentWordSelector = Math.floor(Math.random()*this.dcWordBank.length)
 
-            this.currentWord = this.dcWordBank[Math.floor(Math.random()*this.dcWordBank.length)];
+            this.currentWord = this.dcWordBank[this.currentWordSelector][0];
+
             if(this.currentWord === this.priorWord){
-                this.currentWord = this.dcWordBank[Math.floor(Math.random()*this.dcWordBank.length)];
+                this.currentWordSelector = Math.floor(Math.random()*this.dcWordBank.length)
+
+                this.currentWord = this.dcWordBank[this.currentWordSelector][0];
             }
             this.lettersRemaining = this.currentWord.length;
 
@@ -93,7 +99,10 @@ var wordGuessGame = {
         document.getElementById("hiddenWord").innerHTML = this.currentWordAnswer.join(" ");
         document.getElementById("guessedLetters").innerHTML = this.lettersGuessed.join(", ");
         if(this.wins > 0){
-            document.getElementById("previousWord").innerHTML = this.priorWord;
+            document.getElementById("previousWord").innerHTML = this.dcWordBank[this.priorWordSelector][0];
+            document.getElementById("heroImg").src = this.dcWordBank[this.priorWordSelector][1];
+            document.getElementById("quoteMe").innerHTML = this.dcWordBank[this.priorWordSelector][2];
+            document.getElementById("sound").innerHTML = this.dcWordBank[this.priorWordSelector][3];
         }
     }
 }

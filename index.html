@@ -14,21 +14,33 @@
     <!-- My CSS styling --> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 
-    <script src="assets/javascript/game2.0.js"></script>
+    <script src="assets/javascript/game2.1.js"></script>
 </head>
-<body onload="wordGuessGame.htmlVariables()">
+<body id="dcBackground" onload="wordGuessGame.htmlVariables()">
     
-    <header>
-        <h1 class="wrapper">Comic Book Character guessing game!</h1>
+    <header class="dcColors">
+        <div class="wrapper">
+            <h1>Comic Book Character guessing game!</h1>
+            <div>
+                <button class="dcColors">DC - Version</button>
+                <button class="marvelButton">Marvel - Version</button>
+            </div>
+            <div>
+                <button class="">Heroes</button>
+                <button class="">Villains</button>
+            </div>
+        </div>
     </header>
   
-
-    <div class="wrapper" id="game-area">
-        <div class="game-area-divider lefthalf">
-            <img>
-            <p>The prior word was:</p>
+    
+    <div class="wrapper push dcColors" id="game-area">
+        <div class="game-area-divider lefthalf dcColors">
+            <img id="heroImg" src="assets/images/default.jpg">
+            <p>The prior word was: </p>
             <span id="previousWord"></span>
-        </div><div class="game-area-divider righthalf">
+            <p id="quoteMe">DC Comics, Inc. is an American comic book publisher. It is the publishing unit of DC Entertainment, a subsidiary of Warner Bros. DC Comics is one of the largest and oldest American comic book companies, and produces material featuring numerous culturally iconic heroic characters.</p>
+            <span id="sound"></span>
+        </div><div class="game-area-divider righthalf dcColors">
             <p id="game">Type any key to get started!</p>
             <p>Wins: </p>
             <span id="wins"></span>
@@ -40,6 +52,10 @@
             <span id="guessedLetters"></span>
         </div>
     </div>
+
+    <footer>
+            <p> Work of University of MN Bootcamp </p>
+    </footer>
 
 </body>
 </html>
