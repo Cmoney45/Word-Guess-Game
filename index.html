@@ -11,19 +11,34 @@
 
     <!-- CSS reset from Meyerweb -->
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
-    <!-- My CSS styling -->
+    <!-- My CSS styling --> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
 
     <script src="assets/javascript/game2.0.js"></script>
 </head>
 <body onload="wordGuessGame.htmlVariables()">
-    <header>WOW, such game very cool!</header><br><br>
+    
+    <header>
+        <h1 class="wrapper">Comic Book Character guessing game!</h1>
+    </header>
+  
 
-    <div>
-        <div>
-            
+    <div class="wrapper" id="game-area">
+        <div class="game-area-divider lefthalf">
+            <img>
+            <p>The prior word was:</p>
+            <span id="previousWord"></span>
+        </div><div class="game-area-divider righthalf">
+            <p id="game">Type any key to get started!</p>
+            <p>Wins: </p>
+            <span id="wins"></span>
+            <p>Current Word: </p>
+            <span id="hiddenWord"></span>
+            <p>Number of Guesses Remaining: </p>
+            <span id="guessesRemaining"></span>
+            <p>Letters Already Guessed: </p>
+            <span id="guessedLetters"></span>
         </div>
-        <p id="game">Type any key to get started!</p>
     </div>
 
 </body>

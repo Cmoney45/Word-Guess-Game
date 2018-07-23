@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    min-height: 100%;
+    min-width: 100%;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 18px;
+    line-height: 1.25;
+    overflow: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+p
+ {
+    padding: 20px 0;
+}
+.wrapper {
+    max-width: 968px;
+    margin: auto;
+    overflow: auto;
+}
+
+#game-area {
+    background-color: #ffffff;
+    border: solid .15px #dddddd;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: grid;
+    grid-column-gap: 0;
+    grid-template-columns: 50% 50%;
+
+}
+
+.game-area-divider {
+    padding: 20px;
+    border: solid .15px #dddddd;
+    text-align: center;
+}
