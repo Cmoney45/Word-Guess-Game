@@ -11,7 +11,7 @@ body {
 }
 
 #dcBackground {
-    background-image: url(../images/dcBackground.jpg);
+    background-image: url(../images/dc/dcBackground.jpg);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -23,13 +23,27 @@ h1 {
     font-size: 2em;
 }
 
+.headerGrid {
+    display: grid;
+    grid-column-gap: 0;
+    grid-template-columns: auto auto;
+}
+
+.headerFloatRight {
+    float: right;
+}
+
+#portfolioButton {
+
+}
+
 p
  {
     padding: 20px 0;
 }
 
 .push {
-    min-height: calc(100vh - 250px)
+    min-height: calc(100vh - 228px)
 }
 
 .wrapper {
@@ -56,7 +70,7 @@ p
 }
 
 #heroImg {
-    width: 350px;
+    width: 100%;
     height: 300px;
 }
 
@@ -68,16 +82,16 @@ header {
     position: relative;
 }
 
-
 button {
     padding: 10px;
-    border: none;
+    border: .5px solid;
+    margin-top: 5px;
 }
 
-
 .dcColors {
-    background-color: black;
-    color: blue;
+    background-color: rgb(0, 0, 0);
+    color: rgba(0, 0, 200);
+    border-color: rgba(0, 0, 200);
 }
 
 .marvelButton {
@@ -86,7 +100,7 @@ button {
 }
 
 footer {
-    padding: 30px 0px 0px 0px;
+    padding: 0px 0px 0px 0px;
     border-top: 10px #4aaaa5 solid;
     background-color: #666666;
     color: #ffffff;
@@ -115,15 +129,14 @@ footer {
         font-size: 1.5em;
     }
 
-    li a {
-        margin: 10px 0 10px 0;
-        font-size: .70em;
+.headerGrid,
+#portfolioButton {
+    display: block;
+    text-align: center;
     }
-    #game-area {
+
+#game-area {
         margin: 15px;
-        padding: 10px;
-    }
-    h2{
-        font-size: 1.25em;
+
     }
 }

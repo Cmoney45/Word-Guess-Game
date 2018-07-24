@@ -13,34 +13,40 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css"> 
     <!-- My CSS styling --> 
     <link rel="stylesheet" type="text/css" href="assets/css/style.css"> 
-
+    <link rel="icon" type="image/png" href="assets/images/dc/dcDefault.jpg">
     <script src="assets/javascript/game2.1.js"></script>
 </head>
 <body id="dcBackground" onload="wordGuessGame.htmlVariables()">
     
     <header class="dcColors">
         <div class="wrapper">
-            <h1>Comic Book Character guessing game!</h1>
-            <div>
-                <button class="dcColors">DC - Version</button>
-                <button class="marvelButton">Marvel - Version</button>
+            <div class="headerGrid">
+                <h1>Comic Book Character guessing game!</h1>
+                <div class="centerGrid">
+                    <button class="dcColors" id="active">DC - Version</button>
+                    <button class="marvelButton">Marvel - Version</button>
+                </div>
             </div>
-            <div>
+            <!-- <div class="headerFloatRight">
                 <button class="">Heroes</button>
                 <button class="">Villains</button>
+            </div> -->
+            <div id="portfolioButton">
+                <button href="https://cmoney45.github.io/portfolio.html">Colton's portfolio</button>
             </div>
         </div>
     </header>
   
     
     <div class="wrapper push dcColors" id="game-area">
-        <div class="game-area-divider lefthalf dcColors">
-            <img id="heroImg" src="assets/images/default.jpg">
+        <div class="game-area-divider dcColors">
+            <img id="heroImg" src="assets/images/dc/dcDefault.jpg">
             <p>The prior word was: </p>
-            <span id="previousWord"></span>
-            <p id="quoteMe">DC Comics, Inc. is an American comic book publisher. It is the publishing unit of DC Entertainment, a subsidiary of Warner Bros. DC Comics is one of the largest and oldest American comic book companies, and produces material featuring numerous culturally iconic heroic characters.</p>
-            <span id="sound"></span>
-        </div><div class="game-area-divider righthalf dcColors">
+            <span id="previousWord"></span><hr>
+            <p>Quote: </p>
+            <span id="quoteMe">DC Comics, Inc. is an American comic book publisher. It is the publishing unit of DC Entertainment, a subsidiary of Warner Bros. DC Comics is one of the largest and oldest American comic book companies, and produces material featuring numerous culturally iconic heroic characters.</span>
+            <audio id="sound" src="assets/songs/dc/arrowTvTheme.m4a"></audio>
+        </div><div class="game-area-divider dcColors">
             <p id="game">Type any key to get started!</p>
             <p>Wins: </p>
             <span id="wins"></span>
@@ -53,7 +59,7 @@
         </div>
     </div>
 
-    <footer>
+    <footer class="dcColors">
             <p> Work of University of MN Bootcamp </p>
     </footer>
 
